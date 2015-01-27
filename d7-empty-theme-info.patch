@@ -1,0 +1,18 @@
+diff --git a/includes/theme.inc b/includes/theme.inc
+index ed34b82..0bfba74 100644
+--- a/includes/theme.inc
++++ b/includes/theme.inc
+@@ -1078,9 +1078,12 @@ function theme($hook, $variables = array()) {
+         }
+       }
+     }
+-    else {
++    else if (isset($info['render element'])) {
+       $variables[$info['render element']] = $element;
+     }
++    else {
++      drupal_set_message('no variables or render element for theme implementation:<br/><pre>' . print_r($info, 1) . '</pre>');
++    }
+   }
+ 
+   // Merge in argument defaults.
