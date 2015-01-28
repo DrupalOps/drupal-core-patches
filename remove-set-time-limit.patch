@@ -7,7 +7,7 @@ index d19429a..7992ccb 100644
    // Try to allocate enough time to run all the hook_cron implementations.
    if (function_exists('set_time_limit')) {
 -    @set_time_limit(240);
-+    // Patched, from https://github.com/DrupalOps/drush-make-patchfiles
++    // Patched, from https://github.com/DrupalOps/drupal-core-patches
 +    // @set_time_limit(240);
    }
  
@@ -21,7 +21,7 @@ index 44166a1..477638a 100644
    // Try to allocate enough time to parse and import the data.
    if (function_exists('set_time_limit')) {
 -    @set_time_limit(240);
-+    // Patched, from https://github.com/DrupalOps/drush-make-patchfiles
++    // Patched, from https://github.com/DrupalOps/drupal-core-patches
 +    // @set_time_limit(240);
    }
  
@@ -35,7 +35,7 @@ index 4cc6bdf..de601dd 100644
        // Try to allocate enough time to rebuild node grants
        if (function_exists('set_time_limit')) {
 -        @set_time_limit(240);
-+        // Patched, from https://github.com/DrupalOps/drush-make-patchfiles
++        // Patched, from https://github.com/DrupalOps/drupal-core-patches
 +        // @set_time_limit(240);
        }
        $result = db_query("SELECT nid FROM {node}");
