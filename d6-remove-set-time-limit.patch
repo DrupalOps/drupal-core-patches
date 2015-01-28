@@ -1,0 +1,42 @@
+diff --git a/includes/common.inc b/includes/common.inc
+index d19429a..7992ccb 100644
+--- a/includes/common.inc
++++ b/includes/common.inc
+@@ -2772,7 +2772,8 @@ function page_set_cache() {
+ function drupal_cron_run() {
+   // Try to allocate enough time to run all the hook_cron implementations.
+   if (function_exists('set_time_limit')) {
+-    @set_time_limit(240);
++    // Patched, from https://github.com/DrupalOps/drush-make-patchfiles
++    // @set_time_limit(240);
+   }
+ 
+   // Fetch the cron semaphore
+diff --git a/includes/locale.inc b/includes/locale.inc
+index 44166a1..477638a 100644
+--- a/includes/locale.inc
++++ b/includes/locale.inc
+@@ -1038,7 +1038,8 @@ function locale_add_language($langcode, $name = NULL, $native = NULL, $direction
+ function _locale_import_po($file, $langcode, $mode, $group = NULL) {
+   // Try to allocate enough time to parse and import the data.
+   if (function_exists('set_time_limit')) {
+-    @set_time_limit(240);
++    // Patched, from https://github.com/DrupalOps/drush-make-patchfiles
++    // @set_time_limit(240);
+   }
+ 
+   // Check if we have the language already in the database.
+diff --git a/modules/node/node.module b/modules/node/node.module
+index 4cc6bdf..de601dd 100644
+--- a/modules/node/node.module
++++ b/modules/node/node.module
+@@ -2345,7 +2345,8 @@ function node_access_rebuild($batch_mode = FALSE) {
+     else {
+       // Try to allocate enough time to rebuild node grants
+       if (function_exists('set_time_limit')) {
+-        @set_time_limit(240);
++        // Patched, from https://github.com/DrupalOps/drush-make-patchfiles
++        // @set_time_limit(240);
+       }
+       $result = db_query("SELECT nid FROM {node}");
+       while ($node = db_fetch_object($result)) {
