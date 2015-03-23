@@ -1,0 +1,12 @@
+diff --git a/robots.txt b/robots.txt
+index 6f20eaf..a8cbb6c 100644
+--- a/robots.txt
++++ b/robots.txt
+@@ -22,7 +22,6 @@ Crawl-delay: 10
+ Disallow: /includes/
+ Disallow: /misc/
+ Disallow: /modules/
+-Disallow: /profiles/
+ Disallow: /scripts/
+ Disallow: /themes/
+ # Files
